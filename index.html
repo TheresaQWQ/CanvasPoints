@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: no-repeat center center;
+      background-size: cover;
+      filter: blur(10px);
+      transform: scale(1.2);
+      z-index: 1;
+    }
+
+    .cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2;
+    }
+
+    #text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+  </style>
+
+  <div class="box">
+    <div class="bg"></div>
+    <div class="cover"></div>
+    <canvas id="text"></canvas>
+  </div>
+
+  <script>
+    // random background image
+    const bgEl = document.querySelector('.bg');
+    bgEl.setAttribute('style', `background-image: url("https://theresa.cafe/waifu/${Date.now()}")`);
+  </script>
+
+  <script src="./canvas.js"></script>
+</body>
+
+</html>
